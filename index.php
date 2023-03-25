@@ -21,7 +21,7 @@
             <br>
             <p>¿Olvido la contraseña?</p>
             <br>    
-            <input type="submit" name="submit" value="submit" class="log">
+            <input type="submit" name="submit" value="Login" class="log">
         </form>
         <p>Or login with</p>
         <div class="buttons">
