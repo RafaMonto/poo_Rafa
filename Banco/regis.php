@@ -22,6 +22,9 @@
         $nrocuenta = $_POST['nrocuenta'];
         $sdo = $_POST['sdo'];
 
+        $veri = mysqli_query($conn, "SELECT Cedula FROM usuarios");
+
+        if($ced != $veri){
         $add = "INSERT INTO `usuarios`(`Cedula`, `Nombre`, `Apellidos`, `Numero de cuenta`, `Saldo`) VALUES ('$ced','$nom','$apl','$nrocuenta','$sdo')";
 
     if (mysqli_query($conn, $add)) {
@@ -37,9 +40,10 @@
         ?></h3><?php
       }
     mysqli_close($conn);
-    }
-
-    
+    }else {
+      echo "Esta cedula ya esta registrada";
+  } 
+  }
     ?>
     
 <main class="form-signin w-100 m-auto">
