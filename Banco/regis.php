@@ -10,12 +10,35 @@
     <link href="style.css" rel="stylesheet">
   </head>
   <body class="text-center">
+
+  <main class="form-signin w-100 m-auto">
+    <div class="form">
+  <form action="" method="post">
+    <h1>BANCO</h1>
+    <div class="form-floating">
+      <input type="number" class="form-control" name="cedula" placeholder="Cedula"required>
+    </div>
+    <div class="form-floating">
+      <input type="text" class="form-control" name="nombre" placeholder="Nombre"required>
+    </div>
+    <div class="form-floating">
+      <input type="text" class="form-control" name="apellidos" placeholder="Apellidos"required>
+    </div>
+    <div class="form-floating">
+      <input type="number" class="form-control" name="nrocuenta" placeholder="Numero de cuenta"required>
+    </div>
+    <div class="form-floating">
+      <input type="number" class="form-control" name="sdo" placeholder="Saldo actual"required>
+    </div>
+    <button class="w-100 btn btn-lg btn-primary" type="submit"  ><a href="indexBanco.php">Registrar</a>
+    </button>
+  </form>
+    </div>
+    
+</main>
   <?php 
     $conn = mysqli_connect('localhost', 'root', '', 'banco');
 
-    if((empty($_POST['cedula'])) && (empty($_POST['nombre'])) && (empty($_POST['apellidos'])) && (empty($_POST['nrocuenta'])) && (empty($_POST['sdo']))){
-        echo "Por favor llenar todos los campos";
-    } else {
         $ced = $_POST['cedula'];
         $nom = $_POST['nombre'];
         $apl = $_POST['apellidos'];
@@ -40,36 +63,8 @@
         ?></h3><?php
       }
     mysqli_close($conn);
-    }else {
-      echo "Esta cedula ya esta registrada";
-  } 
-  }
+    }
     ?>
-    
-<main class="form-signin w-100 m-auto">
-    <div class="form">
-  <form action="" method="post">
-    <h1>BANCO</h1>
-    <div class="form-floating">
-      <input type="number" class="form-control" name="cedula" placeholder="Cedula"required>
-    </div>
-    <div class="form-floating">
-      <input type="text" class="form-control" name="nombre" placeholder="Nombre"required>
-    </div>
-    <div class="form-floating">
-      <input type="text" class="form-control" name="apellidos" placeholder="Apellidos"required>
-    </div>
-    <div class="form-floating">
-      <input type="number" class="form-control" name="nrocuenta" placeholder="Numero de cuenta"required>
-    </div>
-    <div class="form-floating">
-      <input type="number" class="form-control" name="sdo" placeholder="Saldo actual"required>
-    </div>
-    <button class="w-100 btn btn-lg btn-primary" type="submit"  onClick="<?php header('Location: indexBanco.php'); ?>">Registrar
-    </button>
-  </form>
-    </div>
-    
-</main>  
+      
   </body>
 </html>
