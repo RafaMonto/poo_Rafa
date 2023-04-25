@@ -39,6 +39,8 @@
   <?php 
     $conn = mysqli_connect('localhost', 'root', '', 'banco');
 
+    if(empty($ced && $nom && $apl && $nrocuenta && $sdo)){
+
         $ced = $_POST['cedula'];
         $nom = $_POST['nombre'];
         $apl = $_POST['apellidos'];
@@ -64,6 +66,7 @@
       }
     mysqli_close($conn);
     }
+  }
     ?>
       
   </body>
